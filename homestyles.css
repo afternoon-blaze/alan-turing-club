@@ -1,0 +1,158 @@
+:root {
+    --primary-color: #12181b;
+    --secondary-color: #2C394B;
+    --accent-color: #1c8cec;
+    --border-color: #424242;
+    --form-border: #4b4f74;
+    --form-border-active: #676d95;
+    --form-shadow: #878ec3;
+    --regix-bg: #202333;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("Fonts/Poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Arvo";
+    src: url("Fonts/Arvo/Arvo-Bold.ttf");
+}
+
+
+body {
+    background-color: var(--primary-color);
+    font-family: 'Poppins';
+    margin: 0%;
+}
+
+body::-webkit-scrollbar,
+select::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track,
+select::-webkit-scrollbar-track {
+    background-color: #424242;
+}
+
+body::-webkit-scrollbar-thumb,
+select::-webkit-scrollbar-thumb {
+    background-color: #676767;
+}
+
+.main {
+    background-color: #2159c2;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("Images/elder.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.img-mask {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(#000000c1, #0312284f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.unchanged {
+    background: linear-gradient(#000000e0, #03122800);
+}
+
+.def-sign {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    transition: all 200ms ease-in-out;
+}
+
+.def-sign:hover {
+    background-color: #fff;
+    color: var(--regix-bg);
+}
+
+.navbar.change {
+    background-color: var(--secondary-color);
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0px 0.22rem 1.2rem 0.01rem #000;
+    transition: all 500ms;
+}
+
+.join {
+    background-color: #ffffff30;
+    text-decoration: none;
+    font-size: 1.6em;
+    padding: 1rem 2rem;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 1em;
+    margin-top: 4rem;
+    transition: all 300ms ease-in-out;
+}
+
+.join:hover {
+    background-color: #fff;
+    transform: translateY(-2px);
+    color: #0d6efd;
+}
+
+.card {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.navbar-brand,
+.nav-link,
+.def-sign {
+    font-size: 1.22rem;
+}
+
+.faculty {
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondary-color);
+}
+
+.abt-faculty {
+    max-width: 576px;
+}
+
+.btn-warning {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #fff;
+    transition: all 200ms ease-in;
+}
+
+
+footer {
+    background-color: #1c1d1f;
+}
+
+.details {
+    border-bottom: 2px solid var(--border-color);
+}
+
+@media(max-width: 576px) {
+    .unchanged {
+        box-shadow: 0px 0.22rem 1.2rem 0.01rem #000;
+        background: var(--secondary-color);
+    }
+    .join {
+        font-size: 1.2em;
+    }
+}

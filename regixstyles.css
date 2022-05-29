@@ -1,0 +1,144 @@
+.regix-card {
+    background-color: var(--regix-bg);
+    position: relative;
+    border-radius: 1rem;
+}
+
+.reg-img {
+    background: var(--primary-color);
+}
+
+.hero-img {
+    background: url("Images/micro.jpg");
+    background-size: cover;
+    background-position: center;
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.form-control,
+.form-select,
+.form-check-input {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 2px solid var(--form-border);
+}
+
+.form-select {
+    background-image: url("Images/caret-down-fill.svg");
+}
+
+.form-control:active,
+.form-control:focus,
+.form-select:active,
+.form-select:focus,
+.form-check-input:focus,
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border: 2px solid var(--form-border-active);
+    color: #fff;
+    box-shadow: 0px 0px 1px 2px var(--form-shadow);
+}
+
+.form-check-label,.form-check-input {
+    font-size: 1.21rem;
+}
+
+.form-select {
+    font-size: 0.9rem;
+    
+}
+
+.bt-parent {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-outline-light {
+    border-width: 2px;
+}
+
+.modal-content {
+    border-radius: 2rem;
+}
+
+.modal-xl {
+    max-width: 1320px;
+    max-height: 600px;
+}
+
+
+.modal-backdrop {
+    z-index: 0;
+}
+
+.filler {
+    margin-top: 5.4rem;
+}
+
+@media (min-width: 1200px) and (max-width: 1327px) {
+    .modal-xl {
+        max-width: 1199.99px;
+    }
+}
+
+/* Sign-in styles */
+
+.reg-sign {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 1.3em;
+    flex-basis: 100%;
+    transition: all 400ms cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.reg-sign:hover {
+    background-color: #fff;
+    color: var(--regix-bg);
+}
+
+.sign-in-img {
+    background: url("Images/stars.jpg");
+    background-size: cover;
+    background-position: center;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+
+.student-row {
+    border-top: 1px solid #554774;
+}
+
+.reg-sign.s-sign {
+    background-color: #7859bd;
+    border: 2px solid #7859bd;
+    transition: all 99ms ease-in;
+}
+
+.reg-sign.s-sign:hover {
+    background-color: #6137bd;
+    border: 2px solid #6137bd;
+    color: #fff;
+}
+
+.s-link {
+    text-decoration: none;
+    color: #bca9e4;
+}
+
+.s-link:hover {
+    color: #a67dff;
+}
+
+@media(min-width: 1200px) {
+    .sign-card {
+        padding: 5.6rem!important;
+    }
+}
+
+@media(max-width: 375px) {
+    .sign-card {
+        padding: 1.3rem!important;
+    }
+}
