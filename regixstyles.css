@@ -59,6 +59,8 @@
 }
 
 .modal-content {
+    background-color: transparent;
+    border-color: transparent;
     border-radius: 2rem;
 }
 
@@ -84,11 +86,21 @@
 
 /* Sign-in styles */
 
+.regix-card.sign-in {
+    max-width: 800px;
+}
+
+
+.sign-card {
+    max-width: 380px;
+    max-height: 600px;
+}
+
 .reg-sign {
     background-color: transparent;
     border: 2px solid #fff;
     color: #fff;
-    font-size: 1.3em;
+    font-size: 1.1em;
     flex-basis: 100%;
     transition: all 400ms cubic-bezier(0.85, 0, 0.15, 1);
 }
@@ -99,7 +111,7 @@
 }
 
 .sign-in-img {
-    background: url("Images/stars.jpg");
+    background: url("Images/stars.png");
     background-size: cover;
     background-position: center;
     border-bottom-left-radius: 1rem;
@@ -129,16 +141,17 @@
 
 .s-link:hover {
     color: #a67dff;
-}
-
-@media(min-width: 1200px) {
-    .sign-card {
-        padding: 5.6rem!important;
-    }
+    cursor: pointer;
 }
 
 @media(max-width: 375px) {
-    .sign-card {
-        padding: 1.3rem!important;
+    .sign-card-parent {
+        padding: 1.9rem!important;
+    }
+}
+
+@media(min-width: 375px) and (max-width: 576px) {
+    .regix-card.sign-in {
+        max-width: 384px;
     }
 }

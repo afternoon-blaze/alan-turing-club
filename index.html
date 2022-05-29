@@ -6,9 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alan Turing Club</title>
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Poppins&display=swap" rel="stylesheet"> -->
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -35,19 +32,18 @@
         </div>
         <nav class="navbar navbar-dark navbar-expand-lg fixed-top unchanged" id="mainNav">
             <div class="container-fluid">
-                <a href="#" class="navbar-brand">Alan Turing</a>
                 <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navCo"><span
                         class="navbar-toggler-icon"></span></button>
+                <div class="nav-item ms-2 p-lg-1 py-2">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#sign-in"
+                        class="rounded-pill px-3 py-1 def-sign">Sign in</button>
+                </div>
                 <div class="collapse navbar-collapse justify-content-end" id="navCo">
                     <div class="navbar-nav">
                         <a href="#" class="nav-link">About</a>
                         <a href="#" class="nav-link">Activities</a>
                         <a href="#" class="nav-link">Faculty</a>
                         <a href="#" class="nav-link">Competitions</a>
-                        <div class="nav-item ms-lg-2 p-lg-1 py-2">
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#sign-in"
-                                class="rounded-pill px-3 py-1 def-sign">Sign in</button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -150,7 +146,7 @@
     </footer>
     <!--Registration Modal-->
     <div class="modal fade" id="registration" tabindex="-1">
-        <div class="modal-dialog modal-xl mx-sm-2 mx-xl-auto modal-dialog-centered">
+        <div class="modal-dialog modal-xl mx-sm-2 mx-xl-auto modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-body p-0">
                     <div class="container-xxl text-white regix-card">
@@ -158,21 +154,31 @@
                             <div class="col p-4">
                                 <h2 class="display-3 text-center" style="font-family:Arvo;">Alan Turing Club</h2>
                                 <h4 class="text-center">Student Registration Form</h4>
-                                <form action="post" class="mt-4">
+                                <form action="post" class="mt-4 needs-validation" novalidate onsubmit="alphacheck()">
                                     <div class="row">
                                         <div class="col-md-6 col-lg-4"><label for="rollNo" class="form-label">Roll
                                                 Number</label>
-                                            <input type="text" class="form-control" name="roll" id="rollNo">
+                                            <input type="text" class="form-control" name="roll" id="rollNo"
+                                                maxlength="12" pattern="[0-9]+" required>
+                                            <div class="invalid-feedback">
+                                                Enter your roll number
+                                            </div>
                                         </div>
                                         <div class="col-md-6 col-lg-4 mt-md-0 mt-3"><label for="fName"
                                                 class="form-label">First
                                                 Name</label>
-                                            <input type="text" class="form-control" name="fname" id="fName">
+                                            <input type="text" class="form-control" name="fname" id="fName" required>
+                                            <div class="invalid-feedback">
+                                                Enter your first name
+                                            </div>
                                         </div>
                                         <div class="col-md-6 col-lg-4 mt-lg-0 mt-3"><label for="lName"
                                                 class="form-label">Last
                                                 Name</label>
-                                            <input type="text" class="form-control" name="lname" id="lName">
+                                            <input type="text" class="form-control" name="lname" id="lName" required>
+                                            <div class="invalid-feedback">
+                                                Enter your last name
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row position-relative">
@@ -180,7 +186,7 @@
                                                 for="cName" class="form-label">Class</label>
                                             <select class="form-select" class="form-control" onfocus='this.size=5;'
                                                 onblur='this.size=1;' onchange='this.size=1; this.blur();' name="class"
-                                                id="cName">
+                                                id="cName" required>
                                                 <option disabled selected>Select class</option>
                                                 <option value="MECS">MECS</option>
                                                 <option value="MSCS">MSCS</option>
@@ -193,16 +199,22 @@
                                                 <option value="BA">BA</option>
                                                 <option value="BBA">BBA</option>
                                             </select>
+                                            <div class="invalid-feedback">
+                                                Select your class
+                                            </div>
                                         </div>
                                         <div class="col-12 col-md-6 col-lg-3 col-xxl-2 mt-md-3 filler"></div>
                                         <div class="col-md-6 col-lg-3 col-xxl-2 mt-3"><label for="yName"
                                                 class="form-label">Year</label>
-                                            <select class="form-select" name="year" id="yName">
+                                            <select class="form-select" name="year" id="yName" required>
                                                 <option disabled selected>Select year</option>
                                                 <option>I</option>
                                                 <option>II</option>
                                                 <option>III</option>
                                             </select>
+                                            <div class="invalid-feedback">
+                                                Select your year
+                                            </div>
                                         </div>
                                         <!--Gender-->
                                         <div class="col-md-6 col-xl-3 ms- col-xxl-4 mt-3">
@@ -211,8 +223,11 @@
                                                 <div class="col-md-2">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" name="gender"
-                                                            id="male" value="Male">
+                                                            id="male" value="Male" required>
                                                         <label class="form-check-label" for="male">Male</label>
+                                                    </div>
+                                                    <div class="invalid-feedback">
+                                                        Select your gender
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
@@ -227,21 +242,35 @@
                                         <!--Email-->
                                         <div class="col-md-6 col-lg-4 mt-3"><label for="eMail"
                                                 class="form-label">Email</label>
-                                            <input type="email" class="form-control" name="email" id="eMail">
+                                            <input type="email" class="form-control" name="email" id="eMail" required>
+                                            <div class="invalid-feedback">
+                                                Enter a valid email
+                                            </div>
                                         </div>
                                         <div class="col-md-6 col-lg-4 mt-3"><label for="pHone" class="form-label">Phone
                                                 Number</label>
-                                            <input type="text" class="form-control" name="phone" id="pHone">
+                                            <input type="text" class="form-control" name="phone" id="pHone"
+                                                maxlength="10" pattern="[0-9]+" required>
+                                            <div class="invalid-feedback">
+                                                Enter a valid phone number
+                                            </div>
                                         </div>
                                         <div class="col-md-6 col-lg-4 mt-3"><label for="pWord" class="form-label">Set
                                                 Password</label>
-                                            <input type="password" class="form-control" name="password" id="pWord">
+                                            <input type="password" class="form-control" name="password" id="pWord"
+                                                required>
+                                            <div class="invalid-feedback">
+                                                Set a password
+                                            </div>
                                         </div>
                                         <div class="col-md-6 col-lg-4 mt-3"><label for="cWord"
                                                 class="form-label">Confirm
                                                 Password</label>
                                             <input type="password" class="form-control" name="passwordConfirm"
-                                                id="cWord">
+                                                id="cWord" required>
+                                            <div class="invalid-feedback">
+                                                Re-enter the password
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="bt-parent">
@@ -267,55 +296,71 @@
         <div class="modal-dialog modal-xl mx-sm-2 mx-xl-auto modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body p-0">
-                    <div class="container-xxl text-white regix-card">
+                    <div class="container-xxl text-white regix-card sign-in">
                         <div class="row position-relative">
-                            <span class="position-absolute mt-5 pe-5 d-flex justify-content-end"><button
-                                    data-bs-dismiss="modal" style="background-color: transparent; border: none;"><svg
+                            <span class="position-absolute mt-4 pe-4 d-flex justify-content-end">
+                                <button
+                                    data-bs-dismiss="modal" style="background-color: transparent; border: none;">
+                                    <svg
                                         xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#fff"
                                         class="bi bi-x-lg" viewBox="0 0 16 16">
                                         <path
                                             d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
-                                    </svg></button></span>
-                            <div class="col-0 col-md-6 sign-in-img"></div>
-                            <div class="col p-5 sign-card">
-                                <h2 class="display-3" style="font-family:Arvo;">Sign in</h2>
-                                <h5>Welcome back!</h5>
-                                <div class="row mt-5 mb-4">
-                                    <div class="col d-flex"><button class="reg-sign py-2 px-5 rounded-3">Admin
-                                            Sign-in</button>
+                                    </svg>
+                                </button>
+                            </span>
+                            <div class="col-0 col-sm-4 col-md-6 sign-in-img"></div>
+                            <div class="col d-flex sign-card-parent p-5 justify-content-center">
+                                <div class="col sign-card">
+                                    <h2 style="font-family:Arvo;">Sign in</h2>
+                                    <p>Welcome back!</p>
+                                    <div class="row my-3">
+                                        <div class="col d-flex"><button class="reg-sign py-2 px-4 rounded-3">Admin
+                                                Sign-in</button>
+                                        </div>
                                     </div>
+                                    <div class="row mb-2 student-row">
+                                        <div class="col pt-2 text-center">
+                                            <h5>Student Sign-in</h5>
+                                        </div>
+                                    </div>
+                                    <form method="post" novalidate onsubmit="alphacheck()" class="row needs-validation">
+                                        <div class="col">
+                                            <label for="rollLog" class="form-label lead">Roll Number</label>
+                                            <input type="text" class="form-control" id="rollLog" name="roll-log"
+                                                maxlength="12" pattern="[0-9]+" required>
+                                            <div class="invalid-feedback">
+                                                Enter your roll number
+                                            </div>
+                                            <div class="row mt-2">
+                                                <div class="col">
+                                                    <label for="passLog" class="form-label h5">Password</label>
+                                                    <input type="password" class="form-control" id="passLog"
+                                                        name="pass-log" required>
+                                                    <div class="invalid-feedback">
+                                                        Enter your password
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-1"><a href="#" class="s-link"><i>Forgot Password?</i></a>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col d-flex"><button type="submit"
+                                                        class="reg-sign py-2 px-5 s-sign rounded-3">Sign
+                                                        in</button>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col">Not registered yet? <span class="s-link"
+                                                        data-bs-toggle="modal" data-bs-target="#registration">Register
+                                                        here</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </form>
+
                                 </div>
-                                <div class="row mb-3 student-row">
-                                    <div class="col p-3 text-center">
-                                        <h4>Student Sign-in</h4>
-                                    </div>
-                                </div>
-                                <form method="post" class="row">
-                                    <div class="col">
-                                        <label for="rollLog" class="form-label h5">Roll Number</label>
-                                        <input type="text" class="form-control" id="rollLog" name="roll-log">
-                                        <div class="row mt-2">
-                                            <div class="col">
-                                                <label for="passLog" class="form-label h5">Password</label>
-                                                <input type="password" class="form-control" id="passLog"
-                                                    name="pass-log">
-                                            </div>
-                                        </div>
-                                        <div class="row mt-1"><a href="#" class="s-link"><i>Forgot Password?</i></a>
-                                        </div>
-                                        <div class="row mt-4">
-                                            <div class="col d-flex"><button type="submit"
-                                                    class="reg-sign py-2 px-5 s-sign rounded-3">Sign
-                                                    in</button>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-3">
-                                            <div class="col">Not registered yet? <a class="s-link" href="#">Register
-                                                    here</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -323,16 +368,6 @@
             </div>
         </div>
     </div>
-
-
-    <script>
-        const myRegModal = document.getElementById('registration')
-        const myRegInput = document.getElementById('rollNo')
-
-        myRegModal.addEventListener('shown.bs.modal', () => {
-            myRegInput.focus()
-        })
-    </script>
 
     <!-- JavaScript Bundle with Popper -->
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
@@ -348,6 +383,30 @@
                 $nav.toggleClass("unchanged", $(this).scrollTop() < $nav.height());
             });
         });
+
+        // Validation scripts
+        function alphacheck() {
+            var n = document.getElementById("pHone");
+            if (isNaN(n)) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        var forms = document.querySelectorAll(".needs-validation");
+        Array.prototype.slice.call(forms).forEach(function (form) {
+            form.addEventListener("submit", function (event) {
+
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add("was-validated");
+            }, false);
+        });
+
     </script>
 </body>
 
