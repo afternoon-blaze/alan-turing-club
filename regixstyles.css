@@ -86,12 +86,13 @@
 
 /* Sign-in styles */
 
-.regix-card.sign-in {
+.regix-card.sign-in,.modal-content.sign {
     max-width: 800px;
+    margin: 0 auto;
 }
 
 
-.sign-card {
+.sign-card{
     max-width: 380px;
     max-height: 600px;
 }

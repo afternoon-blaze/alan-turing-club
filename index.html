@@ -187,7 +187,7 @@
                                             <select class="form-select" class="form-control" onfocus='this.size=5;'
                                                 onblur='this.size=1;' onchange='this.size=1; this.blur();' name="class"
                                                 id="cName" required>
-                                                <option disabled selected>Select class</option>
+                                                <option disabled selected value="">Select class</option>
                                                 <option value="MECS">MECS</option>
                                                 <option value="MSCS">MSCS</option>
                                                 <option value="MPCS">MPCS</option>
@@ -207,10 +207,10 @@
                                         <div class="col-md-6 col-lg-3 col-xxl-2 mt-3"><label for="yName"
                                                 class="form-label">Year</label>
                                             <select class="form-select" name="year" id="yName" required>
-                                                <option disabled selected>Select year</option>
-                                                <option>I</option>
-                                                <option>II</option>
-                                                <option>III</option>
+                                                <option disabled selected value="">Select year</option>
+                                                <option value="1">I</option>
+                                                <option value="2">II</option>
+                                                <option value="3">III</option>
                                             </select>
                                             <div class="invalid-feedback">
                                                 Select your year
@@ -294,7 +294,7 @@
     <!--Sign-in Modal-->
     <div class="modal fade" id="sign-in" tabindex="-1">
         <div class="modal-dialog modal-xl mx-sm-2 mx-xl-auto modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content sign">
                 <div class="modal-body p-0">
                     <div class="container-xxl text-white regix-card sign-in">
                         <div class="row position-relative">
